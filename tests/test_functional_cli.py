@@ -1,5 +1,4 @@
 from typer.testing import CliRunner
-
 from beerlog.cli import main
 
 runner = CliRunner()
