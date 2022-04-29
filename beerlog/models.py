@@ -1,6 +1,5 @@
 from sqlmodel import SQLModel
 from sqlmodel.main import Field
-from sqlmodel import select
 from typing import Optional
 from pydantic import validator
 from statistics import mean
