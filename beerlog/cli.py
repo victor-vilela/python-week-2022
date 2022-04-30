@@ -36,7 +36,16 @@ def list_beers(style: Optional[str] = None):
     table = Table(
         title="Beerlog :beer_mug:" if not style else f"Beerlog {style}"
     )
-    headers = ["id", "name", "style", "flavor", "image", "cost", "rate", "date"]
+    headers = [
+        "id",
+        "name",
+        "style",
+        "flavor",
+        "image",
+        "cost",
+        "rate",
+        "date",
+    ]
     for header in headers:
         table.add_column(header, style="magenta")
     for beer in beers:
