@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Response, status  # ASGI
 from beerlog.core import get_beers_from_database
 from beerlog.serializers import BeerIn, BeerOut
-from typing import List
+from typing import List, Optional
 from beerlog.database import get_session
 from beerlog.models import Beer
 
@@ -10,8 +10,8 @@ api = FastAPI(title="Beerlog")
 
 
 @api.get("/beers", response_model=List[BeerOut])
-async def list_beers():
-    beers = get_beers_from_database()
+async def list_beers(style: Optional[str] = None):
+    beers = get_beers_from_database(style)
     return beers
 
 
